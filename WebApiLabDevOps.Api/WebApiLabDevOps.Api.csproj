@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="10.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WebApiLabDevOps.Dal\WebApiLabDevOps.Dal.csproj" />
+    <ProjectReference Include="..\WebApiLabDevOps.Domain\WebApiLabDevOps.Domain.csproj" />
+    <ProjectReference Include="..\WebApiLabDevOps.Service\WebApiLabDevOps.Service.csproj" />
+  </ItemGroup>
+
+</Project>

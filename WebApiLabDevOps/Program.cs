@@ -1,5 +1,7 @@
+using WebApiLabDevOps.Domain.Models.DataBaseContext;
 
-namespace WebApiLabDevOps
+
+namespace WebApiLabDevOps.Api
 {
     public class Program
     {
@@ -7,15 +9,14 @@ namespace WebApiLabDevOps
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
+            builder.Services.AddDatabase(builder.Configuration);
 
             builder.Services.AddControllers();
-            // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
+
             builder.Services.AddOpenApi();
 
             var app = builder.Build();
 
-            // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
                 app.MapOpenApi();
