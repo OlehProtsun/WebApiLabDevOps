@@ -17,8 +17,8 @@ services:
 
   webapilab-api:
     build:
-      context: .
-      dockerfile: WebApiLabDevOps.Api
+      context: ..
+      dockerfile: WebApiLabDevOps.Api/Dockerfile
     container_name: webapilab-api
     ports:
       - "5000:8080"
