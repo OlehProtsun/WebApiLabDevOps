@@ -17,8 +17,6 @@ builder.Services.AddScoped<IWeatherForecastService, WeatherForecastService>();
 
 var app = builder.Build();
 
-DatabaseInitializer.EnsureDatabaseCreatedAndSeeded(app.Services);
-
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
