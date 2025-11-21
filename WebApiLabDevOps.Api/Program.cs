@@ -1,3 +1,4 @@
+using WebApiLabDevOps.Dal.EntitiFramework;
 using WebApiLabDevOps.Dal.Repositories;
 using WebApiLabDevOps.Domain.Abstractions;
 using WebApiLabDevOps.Domain.Models.DataBaseContext;
@@ -16,6 +17,8 @@ builder.Services.AddScoped<IWeatherForecastService, WeatherForecastService>();
 
 var app = builder.Build();
 
+DatabaseInitializer.EnsureDatabaseCreatedAndSeeded(app.Services);
+
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
@@ -25,7 +28,7 @@ if (app.Environment.IsDevelopment())
     });
 }
 
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
