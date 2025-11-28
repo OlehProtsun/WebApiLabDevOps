@@ -20,4 +20,9 @@
     <ProjectReference Include="..\WebApiLabDevOps.Service\WebApiLabDevOps.Service.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include=".github\workflows\docker-build.yml" />
+    <None Include=".github\workflows\dotnet-build.yml" />
+  </ItemGroup>
+
 </Project>
