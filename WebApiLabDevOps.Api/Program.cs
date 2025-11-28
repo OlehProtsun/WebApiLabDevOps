@@ -6,7 +6,6 @@ using WebApiLabDevOps.Service.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-
 builder.Services.AddDatabase(builder.Configuration);
 
 builder.Services.AddControllers();
