@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: webapilab-api
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: webapilab-api
@@ -14,7 +14,8 @@ spec:
     spec:
       containers:
         - name: webapilab-api
-          image: webapilabdevops-api:latest
+          image: webapilabdevops-api:v1
+          imagePullPolicy: IfNotPresent   # << додай це
           ports:
             - containerPort: 8080
           env:
