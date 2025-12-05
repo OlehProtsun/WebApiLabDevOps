@@ -1,0 +1,12 @@
+﻿apiVersion: v1
+kind: Service
+metadata:
+  name: webapilab-api
+spec:
+  selector:
+    app: webapilab-api
+  ports:
+    - name: http
+      port: 80        # порт сервісу всередині кластера
+      targetPort: 8080  # порт контейнера (з Dockerfile)
+  type: NodePort        # щоб можна було відкрити через minikube service

@@ -1,0 +1,24 @@
+﻿apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webapilab-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: webapilab-api
+  template:
+    metadata:
+      labels:
+        app: webapilab-api
+    spec:
+      containers:
+        - name: webapilab-api
+          image: webapilabdevops-api:latest
+          ports:
+            - containerPort: 8080
+          env:
+            - name: ASPNETCORE_ENVIRONMENT
+              value: "Development"
+            - name: ConnectionStrings__DefaultConnection
+              value: "Server=sqlserver;Database=WeatherDb;User Id=sa;Password=Your_password123;TrustServerCertificate=True;"
